@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Grafica Productividad</title>
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<script src="assets/js/ace-extra.min.js"></script>
+	</head>
+
+	<body class="no-skin">
+		<div id="navbar" class="navbar navbar-default          ace-save-state">
+			<div class="navbar-container ace-save-state" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class=""></i>
+							Genial io
+						</small>
+					</a>
+				</div>			
+			</div>
+		</div>
+		<div class="main-container ace-save-state" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+			<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+				<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+				
+				<ul class="nav nav-list">
+					<li class="active">
+						<a href="index.html">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text"> Indicadores </span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+				</ul>
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+			</div>
+			<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+							<li class="active">Indicadores</li>
+						</ul><!-- /.breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- /.nav-search -->
+					</div>
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								Monitoreo Remoto
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									Genial-io
+								</small>
+							</h1>
+						</div>		
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="row">
+									<div class="space-6"></div>				
+									<div class="col-sm-5">
+										<div class="widget-box">
+											<div class="widget-header widget-header-flat widget-header-small">
+												<h5 class="widget-title">
+													<i class="ace-icon fa fa-signal"></i>
+													Rendimiento Diario
+												</h5>
+
+												<div class="widget-toolbar no-border">
+
+                                                <select name="" id="indicador" class="form-control-sm">
+													<option value="Semana1">Semana1</option>
+													<option value="Semana2">Semana2</option>
+													<option value="Semana3">Semana3</option>
+													<option value="Semana4">Semana4</option>
+												</select>											
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<div id="piechart-placeholder" style="height: 300px;"></div>
+													<div id="piechart-placeholder2" style="height: 300px;"></div>
+													<div id="piechart-placeholder3" style="height: 300px;"></div>
+													<div id="piechart-placeholder4" style="height: 300px;"></div>
+													<div id="piechart-placeholder5" style="height: 300px;"></div>
+													<div class="hr hr8 hr-double"></div>
+									
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="vspace-12-sm"></div>
+
+								  <div class="col-sm-6">
+									<div class="widget-box">
+										<div class="widget-header widget-header-flat widget-header-small">
+											<h5 class="widget-title">
+												<i class="ace-icon fa fa-signal"></i>
+												Detalle de rendimiento por turno
+											</h5>
+
+											<div class="widget-toolbar no-border">
+
+												
+											</div>
+										</div>
+									</div>
+								 </div>
+								 <br>
+								 <br>
+								 <br>
+								 <br>
+								
+                                    
+								<div id="detalle">
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-01</div>
+											</div>
+											<div class="stat stat-important">38.00%</div>									
+										</div>
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-01</div>
+											</div>
+											<div class="badge badge-warning">
+												48.24%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>										
+										</div>
+										<div class="space-6"></div>
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-02</div>
+											</div>
+											<div class="stat stat-important">39.63%</div>										
+										</div>
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-02</div>
+											</div>
+											<div class="badge badge-warning">
+												48.33%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>								
+										</div>						
+										<div class="space-6"></div>				
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-03</div>
+											</div>
+											<div class="stat stat-important">32.43%</div>										
+										</div>
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-03</div>
+											</div>
+											<div class="stat stat-important">35.82%</div>										
+										</div>									
+										<div class="space-6"></div>							
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-green">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-04 </div>
+											</div>
+
+											<div class="stat stat-success">64.50%</div>
+										</div>
+
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-04</div>
+											</div>
+											<div class="badge badge-warning">
+												42.95%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>										
+										</div>										
+										<div class="space-6"></div>				
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-05</div>
+											</div>
+											<div class="badge badge-warning">
+												50.82%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>										
+										</div>
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-05</div>
+											</div>
+											<div class="badge badge-warning">
+												50.04%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>										
+										</div>
+										
+										<div class="space-6"></div>							
+
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-06</div>
+											</div>
+											<div class="stat stat-important">10.00%</div>										
+										</div>									
+										<div class="space-6"></div>								
+									</div>
+								</div>
+								<div id="detalle2">
+									<div class="col-sm-2 infobox-container">						
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-07</div>
+											</div>
+											<div class="badge badge-warning">
+												45.45%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>											
+										</div>
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+	
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-07</div>
+											</div>
+											<div class="stat stat-important">0.00%</div>										
+										</div>
+										<div class="space-6"></div>
+									</div>
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-08</div>
+											</div>
+											<div class="badge badge-warning">
+												47.97%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>											
+										</div>
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-08</div>
+											</div>
+											<div class="badge badge-warning">
+												45.92%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+										
+										<div class="space-6"></div>
+
+									
+
+									</div>
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-09</div>
+											</div>
+											<div class="badge badge-warning">
+												40.16%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-09</div>
+											</div>
+											<div class="badge badge-warning">
+												49.13%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+																				
+										<div class="space-6"></div>
+
+									
+
+									</div>
+
+
+								<div class="col-sm-2 infobox-container">
+
+
+									<div class="infobox infobox-red">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">06:00 - 2021-06-10</div>
+										</div>
+										<div class="stat stat-important">37.48%</div>
+
+										
+									</div>
+
+									<div class="infobox infobox-red">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">14:00 - 2021-06-10</div>
+										</div>
+										<div class="stat stat-important">39.14%</div>
+
+										
+									</div>
+
+									<div class="space-6"></div>
+
+									
+
+								</div>
+
+								<div class="col-sm-2 infobox-container">
+
+									<div class="infobox infobox-orange">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">06:00 - 2021-06-11</div>
+										</div>
+										<div class="badge badge-warning">
+											48.92%
+											<i class="ace-icon fa fa-arrow-right"></i>
+										</div>
+
+										
+									</div>
+
+									<div class="infobox infobox-orange">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">14:00 - 2021-06-11</div>
+										</div>
+										<div class="badge badge-warning">
+											45.32%
+											<i class="ace-icon fa fa-arrow-right"></i>
+										</div>
+
+										
+									</div>
+
+									<div class="space-6"></div>
+
+									
+
+								</div>
+
+								<div class="col-sm-2 infobox-container">
+
+									<div class="infobox infobox-orange">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">06:00 - 2021-06-12</div>
+										</div>
+										<div class="badge badge-warning">
+											48.82%
+											<i class="ace-icon fa fa-arrow-right"></i>
+										</div>
+
+										
+									</div>
+
+									<div class="infobox infobox-red">
+										<div class="infobox-icon">
+											<i class="ace-icon fa fa-signal"></i>
+										</div>
+
+										<div class="infobox-data">
+											<span class="infobox-data-number">.</span>
+											<div class="infobox-content">14:00 - 2021-06-12</div>
+										</div>
+										<div class="stat stat-important">36.98%</div>
+
+										
+									</div>
+
+									<div class="space-6"></div>
+
+									
+
+								</div>
+							</div>
+
+
+
+  							<div id="detalle3">
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-14</div>
+											</div>
+											<div class="stat stat-important">25.67%</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-14</div>
+											</div>
+											<div class="badge badge-warning">
+												0.00%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+										
+
+										<div class="space-6"></div>
+								
+
+									</div>
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-15</div>
+											</div>
+											<div class="badge badge-warning">
+												40.22%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-15</div>
+											</div>
+											<div class="badge badge-warning">
+												40.24%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+										
+										<div class="space-6"></div>
+
+									
+
+									</div>
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-16</div>
+											</div>
+											<div class="badge badge-warning">
+												48.68%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-16</div>
+											</div>
+											<div class="stat stat-important">33.27%</div>
+
+											
+										</div>
+
+										
+										<div class="space-6"></div>
+
+									
+
+									</div>
+
+									
+									
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-17</div>
+											</div>
+											<div class="stat stat-important">31.65%</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-17	</div>
+											</div>
+											<div class="badge badge-warning">
+												46.61%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+
+											
+										</div>
+
+
+										
+
+										
+										<div class="space-6"></div>
+									
+
+									</div>
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-18</div>
+											</div>
+											<div class="stat stat-important">29.07%</div>
+
+											
+										</div>
+
+
+										<div class="infobox infobox-red">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-18</div>
+											</div>
+											<div class="stat stat-important">38.46%</div>
+
+											
+										</div>
+
+										
+										<div class="space-6"></div>
+
+										
+
+									
+
+									</div>
+
+
+									<div class="col-sm-2 infobox-container">
+
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-19	</div>
+											</div>
+											<div class="badge badge-warning">
+												44.65%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>
+											
+									</div>
+									<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-19	</div>
+											</div>
+											<div class="badge badge-warning">
+												41.22%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>											
+										</div>										
+										<div class="space-6"></div>
+									</div>
+								</div>
+								<div id="detalle4">
+									<div class="col-sm-2 infobox-container">
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">06:00 - 2021-06-21	</div>
+											</div>
+											<div class="badge badge-warning">
+												53.49%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>										
+										</div>
+										<div class="infobox infobox-orange">
+											<div class="infobox-icon">
+												<i class="ace-icon fa fa-signal"></i>
+											</div>
+
+											<div class="infobox-data">
+												<span class="infobox-data-number">.</span>
+												<div class="infobox-content">14:00 - 2021-06-21	</div>
+											</div>
+											<div class="badge badge-warning">
+												16.59%
+												<i class="ace-icon fa fa-arrow-right"></i>
+											</div>											
+										</div>										
+										<div class="space-6"></div>
+									</div>
+								</div>
+							</div><!-- /.row -->
+
+                            <div style="margin-left:50%;">
+								<div class="infobox infobox-green infobox-small infobox-dark col-md-12">
+									<div class="infobox-progress">
+										<div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+											
+										</div>
+									</div>
+
+									<div class="infobox-data">
+										<div class="infobox-content">Optimo</div>
+										<span class="percent">61</span>%
+											<span class="percent">100</span>%
+									</div>
+								</div>
+
+								<div class="infobox infobox-orange infobox-small infobox-dark col-md-12">
+									<div class="infobox-progress">
+										<div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+											
+										</div>
+									</div>
+
+									<div class="infobox-data">
+										<div class="infobox-content">Medio</div>
+										<span class="percent">41</span>%
+											<span class="percent">60</span>%
+									</div>
+								</div>
+
+								<div class="infobox infobox-red infobox-small infobox-dark col-md-12">
+									<div class="infobox-progress">
+										<div class="easy-pie-chart percentage" data-percent="61" data-size="39">
+											
+										</div>
+									</div>
+
+									<div class="infobox-data">
+										<div class="infobox-content">Deficiente</div>
+										<span class="percent">0</span>%
+											<span class="percent">40</span>%
+									</div>
+								</div>
+							</div>
+								<div class="hr hr32 hr-dotted"></div>
+                            <br>
+							<br>
+							<br>
+
+                            <div class="container">
+                                <div class="col-sm-12">
+									<div class="widget-box">
+										<div class="widget-header">
+											<h4 class="smaller">
+												Indicador Mensual
+												<small>Genial io</small>
+											</h4>
+										</div>
+										<div class="widget-body text-center">
+											<div class="widget-main">
+												<p class="muted">
+													En este modulo puedes validar el indicador grafico por todas las semanas del mes.										
+												</p>
+												<hr />
+												<p>													
+													<span class="btn btn-success btn-sm tooltip-success" data-rel="tooltip" data-placement="right" title="Right Success" data-toggle="modal" data-target="#myModal">Ver Grafico Mensual</span>
+													
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+								<div class="hr hr32 hr-dotted"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="footer">
+				<div class="footer-inner">
+					<div class="footer-content">
+						<span class="bigger-120">
+							
+							Grafica Productividad
+						</span>
+						&nbsp; &nbsp;
+						
+					</div>
+				</div>
+			</div>
+
+			<div id="container" style="height: 300px"></div>		
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div>
+
+		<script src="assets/js/jquery-2.1.4.min.js"></script>
+
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery-ui.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.easypiechart.min.js"></script>
+		<script src="assets/js/jquery.sparkline.index.min.js"></script>
+		<script src="assets/js/jquery.flot.min.js"></script>
+		<script src="assets/js/jquery.flot.pie.min.js"></script>
+		<script src="assets/js/jquery.flot.resize.min.js"></script>
+
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
+
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+
+		$('#piechart-placeholder2').hide();
+		$('#piechart-placeholder3').hide();
+		$('#piechart-placeholder4').hide();
+		$('#piechart-placeholder5').hide();
+
+		$('#detalle2').hide();
+		$('#detalle3').hide();
+		$('#detalle4').hide();
+		$('#detalle5').hide();
+
+       $('#indicador').change(function(){
+		var semana = $(this).val();
+		if (semana=='Semana2'){
+			$('#detalle').hide();
+			$('#piechart-placeholder2').show();
+			$('#piechart-placeholder').hide();
+			$('#detalle2').show();
+			$('#detalle3').hide();
+			$('#detalle4').hide();
+			$('#piechart-placeholder3').hide();
+			$('#piechart-placeholder4').hide();
+
+
+		}else if (semana=='Semana3'){
+			$('#piechart-placeholder3').show();
+			$('#piechart-placeholder').hide();
+			$('#detalle3').show();
+			$('#detalle').hide();
+			$('#detalle2').hide();
+			$('#detalle4').hide();
+			$('#piechart-placeholder2').hide();
+			$('#piechart-placeholder4').hide();
+
+		}else if (semana=='Semana4'){
+			$('#piechart-placeholder4').show();
+			$('#piechart-placeholder').hide();
+			$('#detalle4').show();
+			$('#detalle').hide();
+			$('#detalle2').hide();
+			$('#detalle3').hide();
+			$('#piechart-placeholder2').hide();
+			$('#piechart-placeholder3').hide();
+		}else{
+			$('#piechart-placeholder').show();
+			$('#piechart-placeholder2').hide();
+			$('#detalle').show();
+			$('#detalle2').hide();
+			$('#detalle3').hide();
+			$('#detalle4').hide();
+			$('#piechart-placeholder3').hide();
+			$('#piechart-placeholder4').hide();
+		}
+	   })
+
+	   
+
+	   $(function () {
+    $('.modal-body').highcharts({
+        title: {
+            text: 'Indicador Junio',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Grafica por semana',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Semana1', 'Semana2', 'Seman3', 'Semana4']
+        },
+        yAxis: {
+            title: {
+                text: '% Rendimiento'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+			shared: true,
+            useHTML: true,		
+            valueSuffix: '%'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'productividad',
+            data: [38.40, 34.67, 29.98, 35.04]
+        }]
+    });
+});
+
+
+
+  
+
+
+		$(function () {
+    $('#piechart-placeholder').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Indicador mes de Junio 2021'
+        },
+        subtitle: {
+            text: 'Semana 1'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45,
+				
+            }
+        },
+		tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Rendimiento',
+            data: [
+                ['martes, 1 de junio de 2021', 43.12],
+                ['miércoles, 2 de junio de 2021', 43.98],
+                ['jueves, 3 de junio de 2021', 34.13],
+                ['viernes, 4 de junio de 2021', 53.73],
+                ['sábado, 5 de junio de 2021', 50.43],
+                ['domingo, 6 de junio de 2021', 5.00],
+            ]
+        }]
+    });
+});
+
+
+
+$(function () {
+    $('#piechart-placeholder2').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Indicador mes de Junio 2021'
+        },
+        subtitle: {
+            text: 'Semana 2'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+		tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Rendimiento',
+            data: [
+                ['lunes, 7 de junio de 2021', 22.73],
+                ['martes, 8 de junio de 2021', 46.95],
+                ['miércoles, 9 de junio de 2021', 44.65],
+                ['jueves, 10 de junio de 2021', 38.31],
+                ['viernes, 11 de junio de 2021', 47.12],
+                ['sábado, 12 de junio de 2021', 42.90],
+				['Domingo - 2021-06-13', 0.00],
+            ]
+        }]
+    });
+});
+
+$(function () {
+    $('#piechart-placeholder3').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Indicador mes de Junio 2021'
+        },
+        subtitle: {
+            text: 'Semana 3'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+		tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Rendimiento',
+            data: [
+                ['lunes, 14 de junio de 2021', 12.84],
+                ['martes, 15 de junio de 2021', 40.23],
+                ['miércoles, 16 de junio de 2021', 40.98],
+                ['jueves, 17 de junio de 2021', 39.13],
+                ['viernes, 18 de junio de 2021', 33.77],
+                ['sábado, 19 de junio de 2021', 42.94],
+				['Domingo - 2021-06-20', 0.00],
+            ]
+        }]
+    });
+});
+
+
+$(function () {
+    $('#piechart-placeholder4').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Indicador mes de Junio 2021'
+        },
+        subtitle: {
+            text: 'Semana 4'
+        },
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+		tooltip: {
+            valueSuffix: '%'
+        },
+        series: [{
+            name: 'Rendimiento',
+            data: [
+                ['lunes, 21 de junio de 2021', 35.04],
+                
+            ]
+        }]
+    });
+});
+
+
+
+
+
+
+			jQuery(function($) {
+					
+			
+			
+				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+				function tooltip_placement(context, source) {
+					var $source = $(source);
+					var $parent = $source.closest('.tab-content')
+					var off1 = $parent.offset();
+					var w1 = $parent.width();
+			
+					var off2 = $source.offset();
+					//var w2 = $source.width();
+			
+					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+					return 'left';
+				}
+			
+			
+				$('.dialogs,.comments').ace_scroll({
+					size: 300
+			    });
+				
+				var agent = navigator.userAgent.toLowerCase();
+				if(ace.vars['touch'] && ace.vars['android']) {
+				  $('#tasks').on('touchstart', function(e){
+					var li = $(e.target).closest('#tasks li');
+					if(li.length == 0)return;
+					var label = li.find('label.inline').get(0);
+					if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
+				  });
+				}
+			
+				$('#tasks').sortable({
+					opacity:0.8,
+					revert:true,
+					forceHelperSize:true,
+					placeholder: 'draggable-placeholder',
+					forcePlaceholderSize:true,
+					tolerance:'pointer',
+					stop: function( event, ui ) {
+						//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
+						$(ui.item).css('z-index', 'auto');
+					}
+					}
+				);
+				$('#tasks').disableSelection();
+				$('#tasks input:checkbox').removeAttr('checked').on('click', function(){
+					if(this.checked) $(this).closest('li').addClass('selected');
+					else $(this).closest('li').removeClass('selected');
+				});
+			
+			
+				//show the dropdowns on top or bottom depending on window height and menu position
+				$('#task-tab .dropdown-hover').on('mouseenter', function(e) {
+					var offset = $(this).offset();
+			
+					var $w = $(window)
+					if (offset.top > $w.scrollTop() + $w.innerHeight() - 100) 
+						$(this).addClass('dropup');
+					else $(this).removeClass('dropup');
+				});
+			
+			})
+
+
+			
+
+
+
+		</script>
+		<div class="container">
+            <div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog modal-lg">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal">&times;</button>
+					  <h4 class="modal-title">Indicador Mensual</h4>
+					</div>
+					<div class="modal-body">
+					 
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		</div>
+	</body>
+</html>
